@@ -1,0 +1,44 @@
+project:
+  name: drone_bird
+
+paths:
+  dataset: datasets/drone_bird
+  runs: runs
+  exports: models/exported
+
+classes:
+  - drone
+  - bird
+
+training:
+  model: yolo26n.pt
+  epochs: 100
+  image_size: 640
+  batch: 4
+  workers: 2
+  # patience: 20  # Reative somente quando quiser usar parada antecipada.
+  patience: 0
+  validation_confidence: 0.45
+  device: auto
+  amp: true
+  cache: ram
+  seed: 42
+  close_mosaic: 15
+  optimizer: auto
+  cos_lr: true
+  degrees: 5.0
+  translate: 0.1
+  scale: 0.4
+  fliplr: 0.5
+  mosaic: 1.0
+  mixup: 0.05
+
+inference:
+  confidence: 0.45
+  iou: 0.70
+  image_size: 640
+
+export:
+  format: ncnn
+  image_size: 640
+  fp16: false

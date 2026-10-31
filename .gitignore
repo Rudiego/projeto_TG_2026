@@ -1,0 +1,31 @@
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Arquivos temporários e de auditoria local
+tmp/
+.auditoria_imagens/
+.codex-tg-revisao/
+.tg_review/
+.tmp.driveupload/
+auditoria_texto_extraido.txt
+
+# Imagens e labels locais (mantém apenas a estrutura de pastas)
+datasets/**/images/**/*
+datasets/**/labels/**/*
+!datasets/**/images/**/.gitkeep
+!datasets/**/labels/**/.gitkeep
+datasets/**/data.yaml
+datasets/_backups/
+
+# Pesos, exportações e resultados gerados
+*.pt
+*.onnx
+*.torchscript
+models/exported/*
+!models/exported/.gitkeep
+runs/*
+!runs/.gitkeep
+
